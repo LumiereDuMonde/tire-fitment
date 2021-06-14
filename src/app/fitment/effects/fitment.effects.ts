@@ -115,6 +115,31 @@ export class FitmentEffects {
     );
   });
 
+
+  fetchTires$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(VehicleActions.TIRE_FETCH_START),
+      concatLatestFrom(() =>
+        combineLatest([
+          this.store.select(fromFitment.selectVehicleYear),
+          this.store.select(fromFitment.selectVehicleMake),
+          this.store.select(fromFitment.selectVehicleModel),
+          this.store.select(fromFitment.selectVehicleTrim),
+        ])
+      ),
+      exhaustMap(([action, [year, make, model, trim]]) =>
+        this.fitmentService.getTires(year, make, model, trim).pipe(
+          map((data) => {            
+              return VehicleActions.TIRE_FETCH_SUCCESS({ data });          
+          }),
+          catchError((error) =>
+            of(VehicleActions.TIRE_FETCH_ERROR({ error: error['message'] }))
+          )
+        )
+      )
+    );
+  });  
+
   setYearEffect$ = createEffect(
     () => {
       return this.actions$.pipe(
@@ -159,4 +184,17 @@ export class FitmentEffects {
     },
     { dispatch: false }
   );
+
+  setTrimEffect$ = createEffect(
+    () => {
+      return this.actions$.pipe(
+        ofType(VehicleActions.TRIM_SELECTED),
+        tap((action) => {
+          if (action.value)
+            this.store.dispatch(VehicleActions.TIRE_FETCH_START());
+        })
+      );
+    },
+    { dispatch: false }
+  );  
 }

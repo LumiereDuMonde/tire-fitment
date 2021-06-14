@@ -12,6 +12,8 @@ import { ReactiveComponentModule } from '@ngrx/component';
 import { StoreModule } from '@ngrx/store';
 import { VehicleComponent } from './components/vehicle/vehicle.component';
 import { VehicleContainerComponent } from './containers/vehicle-container/vehicle-container.component';
+import { TireComponent } from './components/tire/tire.component';
+import { TireContainerComponent } from './containers/tire-container/tire-container.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { VehicleContainerComponent } from './containers/vehicle-container/vehicl
     BreadcrumbComponent,
     VehicleComponent,
     VehicleContainerComponent,
+    TireComponent,
+    TireContainerComponent,
   ],
   imports: [
     CommonModule,

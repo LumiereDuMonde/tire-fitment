@@ -11,7 +11,7 @@ button {
     align-items: center; 
     line-height: 32px;    
     .material-icons {        
-        color: #000;
+        color: $secondary_color;
     }
 
     &.selected{

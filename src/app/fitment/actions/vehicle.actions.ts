@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 
 import { FitmentResponse } from '../models/fitmentResponse.model';
+import { Tire } from '../models/tire.model';
 
 const namespace = '[Vehicle] ';
 
@@ -71,3 +72,17 @@ export const TRIM_FETCH_ERROR = createAction(
   namespace + 'Trim Failure',
   props<{ error: string }>()
 );
+
+export const TIRE_FETCH_START = createAction(namespace + 'Tire Start');
+
+export const TIRE_FETCH_SUCCESS = createAction(
+  namespace + 'Tire Success',
+  props<{ data: Tire[] }>()
+);
+
+export const TIRE_FETCH_ERROR = createAction(
+  namespace + 'Tire Failure',
+  props<{ error: string }>()
+);
+
+

@@ -13,8 +13,7 @@ export class VehicleComponent implements OnInit {
     this.columnWidth = value.some((item) => item.length !== 4) ? 2 : 4;    
     this._selectData = [...value];
   }
-  @Output() onSelected = new EventEmitter<string>();
-  @Input() finishedData = '';  
+  @Output() onSelected = new EventEmitter<string>();  
   @Input() loading = false;
   @Input() error: string = null;
   columnWidth = 2;

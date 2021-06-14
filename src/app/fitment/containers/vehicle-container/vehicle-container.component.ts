@@ -16,8 +16,7 @@ import { switchMap } from 'rxjs/operators';
 export class VehicleContainerComponent implements OnInit {
   currentlyDisplayedData$: Observable<string[]>;
   step: FitmentSteps = FitmentSteps.begin;
-  loading$: Observable<boolean>;
-  textDisplayedOnCompletion$: Observable<string>;
+  loading$: Observable<boolean>;  
   error$: Observable<string>;
 
   constructor(private store: Store) {}
@@ -52,13 +51,6 @@ export class VehicleContainerComponent implements OnInit {
         }
         this.step = FitmentSteps.year;
         return this.store.select(fromFitment.selectVehicleYears);
-      })
-    );
-
-    //
-    this.textDisplayedOnCompletion$ = combined$.pipe(
-      switchMap(([year, make, model, trim]) => {
-        return of(`${year} ${make} ${model} ${trim}`);
       })
     );
 

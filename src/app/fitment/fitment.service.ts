@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { FitmentResponse } from './models/fitmentResponse.model';
 import { Injectable } from '@angular/core';
+import { Tire } from './models/tire.model';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -39,5 +40,14 @@ export class FitmentService {
     return this.http.get<FitmentResponse>(environment.FITMENT_BASE_URL + path, {
       params,
     });
+  }
+
+  getTires(year: string, make: string, model: string, trim: string) {
+    let params = new HttpParams();
+    params = params.append('year', year);
+    params = params.append('make', make);
+    params = params.append('model', model);
+    params = params.append('trim', trim);  
+    return this.http.get<Tire[]>(environment.TIRE_API_URL, { params })
   }
 }

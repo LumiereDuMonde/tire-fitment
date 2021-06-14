@@ -10,3 +10,4 @@
 <app-breadcrumb breadCrumbLabel="Trim" (click)="trimClick()"
     [selected]="(model$ | ngrxPush) !== null && (trim$ | ngrxPush) === null">
 </app-breadcrumb>
+<div class="vehicle-description">{{currentDescription$ | ngrxPush }}</div>
