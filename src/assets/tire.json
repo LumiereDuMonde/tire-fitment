@@ -1,0 +1,30 @@
+[{
+    "url": "assets/tire1.jpg",
+    "title": "Toyo - Extensa HP II",
+    "description": "Get strong all-season traction, excellent handling, and a comfortable ride with this high-performance tire.",
+    "size": "215/45R17XL",
+    "type": "High Performance All Season",
+    "index": "91",
+    "loadRating": "W",
+    "price": 100.83
+},
+{
+    "url": "assets/tire2.jpg",
+    "title": "Ironman - iMOVE GEN2 AS",
+    "description": "Get all the benefits of high performance all-season touring tires, at a great low price.Now with Ironman’s 2-year Road Hazard Protection Policy. Replaces your tire if it suffers road damage under normal driving conditions.",
+    "size": "215/45ZR17XL",
+    "type": "High Performance All Season",
+    "index": "91",
+    "loadRating": "W",
+    "price": 71.99
+},
+{
+    "url": "assets/tire3.jpg",
+    "title": "Falken - Ziex ZE960 A/S",
+    "description": "Get the best performance out of your high performance vehicle in every season.",
+    "size": "215/45R17XL",
+    "type": "High Performance All Season",
+    "index": "91",
+    "loadRating": "W",
+    "price": 108.00
+}]

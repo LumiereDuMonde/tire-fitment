@@ -74,6 +74,11 @@ export const selectVehicleTrims = createSelector(
   fromVehicles.getTrims
 );
 
+export const selectVehicleTires = createSelector(
+  selectVehicleState,
+  fromVehicles.getTires
+);
+
 export const selectLoadingStatus = createSelector(
   selectVehicleState,
   fromVehicles.getLoading
@@ -82,4 +87,12 @@ export const selectLoadingStatus = createSelector(
 export const selectError = createSelector(
   selectVehicleState,
   fromVehicles.getError
+);
+
+export const selectVehicleYearMakeModelTrim = createSelector(
+  selectVehicleYear,
+  selectVehicleMake,
+  selectVehicleModel,
+  selectVehicleTrim,
+  (year, make, model, trim) => { return `${year || ''} ${make || ''} ${model || ''} ${trim || ''}`; }
 );

@@ -1,0 +1,90 @@
+@import '../../../../styles.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    color: $font_color;
+
+    .card {
+        display: flex;
+        flex-direction: row;
+        padding: 24px 0 0 0;
+
+        .card-image {
+            object-fit: cover;
+            width: 178px;
+            height: 100%;
+        }
+
+        .card-detail {
+            padding: 0 10px;
+
+            .title {
+                height: fit-content;
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 8px;
+            }
+
+            .type {
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+
+            .size,
+            .info {
+                font-size: 14px;
+                color: $secondary_color;
+
+                span {
+                    font-weight: 600;
+                }
+            }
+
+            .info {
+                margin-bottom: 4px;
+            }
+
+            .description {
+                font-size: 16px;
+                color: $secondary_color;
+            }
+        }
+
+        .card-interaction {
+            color: $secondary_color;
+            background: rgb(240, 240, 240);
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 110px;
+            justify-content: space-evenly;            
+            .price {
+                position:relative; 
+                flex-grow: 1;
+                font-weight: 600;
+                
+
+                .inner {
+                    position: absolute;
+                    right: 5px;
+                    top: 10px;
+                }
+            }
+            .buttons {
+                align-self: center;
+                flex-grow: 3;
+                >button {
+                    background: $font_color;
+                    color: #fff;
+                    border: none;
+                    font-weight: 500;
+                    display: inline-flex;
+                    align-items: center;
+                    line-height: 22px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

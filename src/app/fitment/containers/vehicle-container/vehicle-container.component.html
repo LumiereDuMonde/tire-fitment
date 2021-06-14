@@ -1,6 +1,5 @@
 <app-vehicle 
-    [selectData]="currentlyDisplayedData$ | ngrxPush" 
-    [finishedData]="textDisplayedOnCompletion$ | ngrxPush" 
+    [selectData]="currentlyDisplayedData$ | ngrxPush"     
     [loading]="loading$ | ngrxPush"
     [error]="error$ | ngrxPush"
     (onSelected)="itemSelected($event)">

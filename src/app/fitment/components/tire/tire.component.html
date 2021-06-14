@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="card" *ngFor="let tire of tires">
+        <div class="card-image">
+            <img src="{{tire.url}}" alt="{{tire.title}}">
+        </div>
+        <div class="card-detail">
+            <div class="title">{{tire.title}}</div>
+            <div class="type">{{tire.type}}</div>
+            <div class="size">Size: <span>{{tire.size}}</span></div>
+            <div class="info">Load Index: <span>{{tire.index}}</span> | Rating: <span>{{tire.loadRating}}</span></div>
+            <div class="description">{{tire.description}}</div>
+        </div>
+        <div class="card-interaction">
+            <div class="price"><div class="inner">{{tire.price | currency}}</div></div>
+            <div class="buttons"><button type="button">Add to cart <i class="material-icons mr-1">navigate_next</i></button></div>
+        </div>
+    </div>
+</div>
