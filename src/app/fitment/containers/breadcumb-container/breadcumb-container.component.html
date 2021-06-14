@@ -1,0 +1,12 @@
+<app-breadcrumb breadCrumbLabel="Year" (click)="yearClick()"
+    [selected]="(make$ | ngrxPush) === null && (year$ | ngrxPush) == null">
+</app-breadcrumb>
+<app-breadcrumb breadCrumbLabel="Make" (click)="makeClick()"
+    [selected]="(make$ | ngrxPush) === null && (year$ | ngrxPush) !== null">
+</app-breadcrumb>
+<app-breadcrumb breadCrumbLabel="Model" (click)="modelClick()"
+    [selected]="(model$ | ngrxPush) === null && (make$ | ngrxPush) !== null">
+</app-breadcrumb>
+<app-breadcrumb breadCrumbLabel="Trim" (click)="trimClick()"
+    [selected]="(model$ | ngrxPush) !== null && (trim$ | ngrxPush) === null">
+</app-breadcrumb>

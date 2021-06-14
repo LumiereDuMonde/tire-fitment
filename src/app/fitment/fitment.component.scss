@@ -1,0 +1,11 @@
+.fitment-container {
+    display: flex;    
+    flex-direction: column;    
+    max-width: 600px;
+    flex: 1 0 auto;
+}
+
+:host {
+    display: flex; 
+    justify-content: center;    
+}

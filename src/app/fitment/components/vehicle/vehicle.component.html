@@ -1,0 +1,10 @@
+<div class="container" [class.more-columns]="columnWidth !== 2" *ngIf="!error">
+    <div *ngFor="let item of _selectData" class="container-item" 
+        (click)="itemSelected(item)">{{item}}</div>
+</div>
+<div class="finished" *ngIf="_selectData.length === 0 && !loading && !error" >
+    <div><h3>{{ finishedData }}</h3></div>
+</div>
+<div class="error" *ngIf="!loading && error !== null" >
+    <div><h3>{{ error }}</h3></div>
+</div>
