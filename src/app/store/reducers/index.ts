@@ -1,6 +1,7 @@
-import { InjectionToken } from '@angular/core';
 import { Action, ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
-import { environment } from 'src/environments/environment';
+
+import { InjectionToken } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 export interface State {}
 
